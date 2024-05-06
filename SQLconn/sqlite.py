@@ -1,6 +1,6 @@
-from SQLconn import SQLconn
+from SQLConn import SQLConn
 import sqlite3
-class SQLiteConn(SQLconn):
+class SQLiteConn(SQLConn):
     def __init__(self,file_path:str) -> None:
         super.__init__()
         self.__file_path=file_path
