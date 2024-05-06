@@ -1,6 +1,6 @@
 import psycopg2
-from SQLconn.SQLconn import DBconn
-class PostgresqlConn(DBconn):
+from SQLconn import SQLconn
+class PostgresqlConn(SQLconn):
     def __init__(self,password:str,host:str='127.0.0.1',user:str="postgres",database:str="postgres",port:str|int=5432) -> None:
         super.__init__()
         self.__host=host

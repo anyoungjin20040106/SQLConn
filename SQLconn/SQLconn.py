@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine.base import Engine
 from abc import ABC, abstractmethod
 
-class SQLconn(ABC):
+class SQLConn(ABC):
     _engine:Engine
     def __init__(self):
         warnings.filterwarnings('ignore', category=DeprecationWarning)

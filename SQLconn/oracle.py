@@ -1,6 +1,6 @@
 import cx_Oracle
-from SQLconn.SQLconn import DBconn
-class OracleConn(DBconn):
+from SQLconn import SQLconn
+class OracleConn(SQLconn):
     def __init__(self,password:str,host:str='127.0.0.1',user:str="system",database:str="xe",port:str|int=1521) -> None:
         super.__init__()
         self.__host=host

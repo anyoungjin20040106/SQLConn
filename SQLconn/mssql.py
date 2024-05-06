@@ -1,6 +1,6 @@
-from DBconn import DBconn
+from SQLconn import SQLconn
 import pymssql
-class MSSQLConn(DBconn):
+class MSSQLConn(SQLconn):
     def __init__(self,host:str='127.0.0.1',user:str="sa",password:str=None,database:str="master",port:str|int=1433) -> None:
         super.__init__()
         self.__host=host
