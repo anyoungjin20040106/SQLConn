@@ -4,8 +4,8 @@ with open("README.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
 
 setup(
-    name='SQLconn',
-    version='0.0.2',
+    name='SQLConn',
+    version='0.0.1',
     description='This package facilitates easy SQL database integration.',
     long_description=long_description,
     long_description_content_type="text/markdown",
