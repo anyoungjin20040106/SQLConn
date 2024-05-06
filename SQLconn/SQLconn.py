@@ -1,6 +1,5 @@
 from pandas import read_sql
 import warnings
-import hashlib
 from sqlalchemy import create_engine
 from sqlalchemy.engine.base import Engine
 from abc import ABC, abstractmethod
@@ -64,12 +63,3 @@ class SQLConn(ABC):
             self.to_DataFrame(cmd).to_sql(name,other.engine.connect(),index=False,if_exists="replace")
         except Exception as e:
             warnings.warn(str(e))
-
-def multi_hash(text)->str:
-    text = str(text)
-    for i in range(0, ord(text[-1]) % 10):
-        if i &1 == 1:
-            text = hashlib.sha256(text.encode()).hexdigest()
-        else:
-            text = hashlib.sha512(text.encode()).hexdigest()
-    return text

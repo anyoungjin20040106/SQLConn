@@ -1,6 +1,6 @@
-from SQLconn import SQLconn
+from SQLConn import SQLConn
 import MySQLdb
-class MYSQLConn(SQLconn):
+class MYSQLConn(SQLConn):
     def __init__(self,password:str,host:str='127.0.0.1',user:str="root",database:str="mysql",port:str|int=3306) -> None:
         super.__init__()
         self.__host=host
