@@ -1,8 +1,8 @@
-from .mssql import MSSQLConn
-from .mysql import MySQLConn
-from .oracle import OracleConn
-from .postgresql import PostgreSQLConn
-from .sqlite import SQLiteConn
+from .SQLConn import MSSQLConn
+from .SQLConn import MYSQLConn
+from .SQLConn import OracleConn
+from .SQLConn import PostgresqlConn
+from .SQLConn import SQLiteConn
 from .SQLConn import SQLConn
 
-__all__ = ["MSSQLConn", "MySQLConn", "OracleConn", "PostgreSQLConn", "SQLiteConn","SQLConn"]
+__all__ = ["MSSQLConn", "MYSQLConn", "OracleConn", "PostgresqlConn", "SQLiteConn","SQLConn"]
