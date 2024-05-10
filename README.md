@@ -97,6 +97,11 @@ df = mysql_conn.to_DataFrame("SELECT * FROM your_table")
 print(df)
 ```
 
+### 패키지 주소
+
+- [github](https://github.com/janyoungjin/SQLConn)
+- [pypi](https://pypi.org/project/SQLConn/)
+
 ## English Version
 
 SQLConn is a Python package that connects to various SQL database management systems (DBMS) to easily manipulate and manage data. This package includes support for MySQL, PostgreSQL, Microsoft SQL Server, Oracle, and SQLite databases.
@@ -193,6 +198,12 @@ postgresql_conn = PostgreSQLConn('your-password')
 df = mysql_conn.to_DataFrame("SELECT * FROM your_table")
 print(df)
 ```
+
+### package address
+
+- [github](https://github.com/janyoungjin/SQLConn)
+
+- [pypi](https://pypi.org/project/SQLConn/)
 
 ### warning
 
