@@ -2,7 +2,7 @@
 
 ## 한국어 버전(Korean Version)
 
-SQLConn은 다양한 SQL 데이터베이스 관리 시스템(DBMS)에 연결하여 데이터를 쉽게 조작하고 관리할 수 있는 Python 패키지입니다. 이 패키지는 MySQL, PostgreSQL, Microsoft SQL Server, Oracle 및 SQLite 데이터베이스에 대한 지원을 포함합니다.
+SQLConn은 다양한 SQL 데이터베이스 관리 시스템(DBMS)에 연결하여 데이터를 쉽게 조작하고 관리할 수 있는 Python 패키지입니다. 이 패키지는 MySQL, PostgreSQL, Microsoft SQL Server 및 SQLite 데이터베이스에 대한 지원을 포함합니다.
 
 ### 기능
 
@@ -17,7 +17,6 @@ SQLConn은 다양한 SQL 데이터베이스 관리 시스템(DBMS)에 연결하�
 - MySQL
 - PostgreSQL
 - Microsoft SQL Server
-- Oracle
 - SQLite
 
 ### 설치 방법
@@ -28,12 +27,6 @@ SQLConn은 다양한 SQL 데이터베이스 관리 시스템(DBMS)에 연결하�
 pip install SQLConn
 ```
 
-만약 OracleConn클래스를 쓰고 싶다면 아래와 같이 설치해야합니다:
-
-```bash
-pip install SQLConn['oracle']
-```
-
 ### 클래스 소개
 
 | 클래스명           | 소개                                                                    | 특이 사항                   |
@@ -42,7 +35,6 @@ pip install SQLConn['oracle']
 | `MYSQLConn`      | MySQL 데이터베이스와의 연결을 관리합니다.                               | SQLConn에게 상속 받았습니다 |
 | `MSSQLConn`      | Microsoft SQL Server 데이터베이스와의 연결을 관리합니다.                | SQLConn에게 상속 받았습니다 |
 | `PostgreSQLConn` | PostgreSQL 데이터베이스와의 연결을 관리합니다.                          | SQLConn에게 상속 받았습니다 |
-| `OracleConn`     | Oracle 데이터베이스와의 연결을 관리합니다.                              | SQLConn에게 상속 받았습니다 |
 | `SQLiteConn`     | SQLite 파일 기반 데이터베이스와의 연결을 관리합니다.                    | SQLConn에게 상속 받았습니다 |
 
 ### 메소드 소개
@@ -110,7 +102,7 @@ print(df)
 
 ## English Version
 
-SQLConn is a Python package that connects to various SQL database management systems (DBMS) to easily manipulate and manage data. This package includes support for MySQL, PostgreSQL, Microsoft SQL Server, Oracle, and SQLite databases.
+SQLConn is a Python package that connects to various SQL database management systems (DBMS) to easily manipulate and manage data. This package includes support for MySQL, PostgreSQL, Microsoft SQL Server and SQLite databases.
 
 ### function
 
@@ -125,7 +117,6 @@ SQLConn is a Python package that connects to various SQL database management sys
 - MySQL
 - PostgreSQL
 - Microsoft SQL Server
-- Oracle
 - SQLite
 
 ### How to install
@@ -136,12 +127,6 @@ In an environment where Python and pip are installed, you can install the `SQLCo
 pip install SQLConn
 ```
 
-If you want to use the OracleConn class, you must install it as follows:
-
-```bash
-pip install SQLConn['oracle']
-```
-
 ### class info
 
 | class name         | info                                                                    | significant              |
@@ -150,7 +135,6 @@ pip install SQLConn['oracle']
 | `MYSQLConn`      | Manages MySQL database relationships.                                   | protected  SQLConn       |
 | `MSSQLConn`      | Manages connections to Microsoft SQL Server databases.                  | protected  SQLConn       |
 | `PostgreSQLConn` | Manages connections to PostgreSQL databases.                            | protected  SQLConn       |
-| `OracleCon`      | Manages Oracle database relationships.                                  | protected  SQLConn       |
 | `SQLiteConn`     | Manages SQLite file-based database relationships.                       | protected  SQLConn       |
 
 ### method info

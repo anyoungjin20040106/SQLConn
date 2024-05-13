@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name='SQLConn',
-    version='0.0.9',
+    version='0.0.10',
     description='This package facilitates easy SQL database integration.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -18,10 +18,7 @@ setup(
         'psycopg2',
         'sqlite3'
     ],
-    extras_require={
-        'oracle': ['cx_Oracle']
-    },
     packages=find_packages(exclude=[]),
     url='https://github.com/janyoungjin/SQLConn',
-    keywords=['mysql', 'postgresql', 'sqlite', 'mssql', 'oracle', 'sql']
+    keywords=['mysql', 'postgresql', 'sqlite', 'mssql', 'sql']
 )
