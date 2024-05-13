@@ -28,6 +28,12 @@ SQLConn은 다양한 SQL 데이터베이스 관리 시스템(DBMS)에 연결하�
 pip install SQLConn
 ```
 
+만약 OracleConn클래스를 쓰고 싶다면 아래와 같이 설치해야합니다:
+
+```bash
+pip install SQLConn['oracle']
+```
+
 ### 클래스 소개
 
 | 클래스명           | 소개                                                                    | 특이 사항                   |
@@ -128,6 +134,12 @@ In an environment where Python and pip are installed, you can install the `SQLCo
 
 ```bash
 pip install SQLConn
+```
+
+If you want to use the OracleConn class, you must install it as follows:
+
+```bash
+pip install SQLConn['oracle']
 ```
 
 ### class info

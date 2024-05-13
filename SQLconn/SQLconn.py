@@ -95,18 +95,24 @@ class MSSQLConn(SQLConn):
     def URL(self):
         return f'mssql+pyodbc://{self.__user}:{self.__password}@{self.__host}:{self.__port}/{self.__database}'
 class OracleConn(SQLConn):
-    def __init__(self,password:str,host:str='127.0.0.1',user:str="system",database:str="xe",port:str|int=1521) -> None:
-        super().__init__()
-        self.__host=host
-        self.__user=user
-        self.__password=password
-        self.__database=database
-        self.__port=int(port)
-        self._conn=cx_Oracle.connect(self.__user,self.__password,f'{self.__host}:{self.__port}/{self.__database}')
+    def __init__(self, password: str, host: str = '127.0.0.1', user: str = "system", database: str = "xe", port: str | int = 1521) -> None:
+        try:
+            import cx_Oracle
+        except ImportError:
+            raise ImportError("cx_Oracle is not installed. Please install it using 'pip install SQLConn[oracle]'")
         
+        super().__init__()
+        self.__host = host
+        self.__user = user
+        self.__password = password
+        self.__database = database
+        self.__port = int(port)
+        self._conn = cx_Oracle.connect(self.__user, self.__password, f'{self.__host}:{self.__port}/{self.__database}')
+
     @property
     def URL(self):
         return f'oracle+cx_oracle://{self.__user}:{self.__password}@{self.__host}:{self.__port}/?service_name={self.__database}'
+
 class PostgresqlConn(SQLConn):
     def __init__(self,password:str,host:str='127.0.0.1',user:str="postgres",database:str="postgres",port:str|int=5432) -> None:
         super().__init__()
