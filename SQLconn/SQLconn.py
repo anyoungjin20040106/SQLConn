@@ -1,6 +1,5 @@
 from pandas import read_sql
 import warnings
-import cx_Oracle
 from sqlalchemy import create_engine
 from sqlalchemy.engine.base import Engine
 from abc import ABC, abstractmethod
