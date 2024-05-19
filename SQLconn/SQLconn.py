@@ -3,7 +3,7 @@ import warnings
 from sqlalchemy import create_engine
 from sqlalchemy.engine.base import Engine
 from abc import ABC, abstractmethod
-import MySQLdb
+import pymysql
 import pymssql
 import psycopg2
 import sqlite3
@@ -75,11 +75,11 @@ class MYSQLConn(SQLConn):
         self.__password=password
         self.__database=database
         self.__port=int(port)
-        self._conn=MySQLdb.connect(host=self.__host,user=self.__user,password=self.__password,database=self.__database,port=self.__port)
+        self._conn=pymysql.connect(host=self.__host,user=self.__user,password=self.__password,database=self.__database,port=self.__port)
         
     @property
     def URL(self):
-        return f'mysql+mysqldb://{self.__user}:{self.__password}@{self.__host}:{self.__port}/{self.__database}'
+        return f'mysql+pymysql://{self.__user}:{self.__password}@{self.__host}:{self.__port}/{self.__database}'
 class MSSQLConn(SQLConn):
     def __init__(self,password:str,host:str='127.0.0.1',user:str="sa",database:str="master",port:str|int=1433) -> None:
         super().__init__()

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name='SQLConn',
-    version='0.0.11',
+    version='0.0.12',
     description='This package facilitates easy SQL database integration.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -13,7 +13,7 @@ setup(
     install_requires=[
         'pandas',
         'sqlalchemy',
-        'MySQL-python',
+        'pymysql',
         'pymssql',
         'psycopg2',
         'sqlite3'
