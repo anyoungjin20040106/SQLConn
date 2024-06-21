@@ -47,8 +47,10 @@ pip install SQLConn
 | `to_excel`     | SQL 쿼리 결과를 Excel 파일로 저장합니다.                       | Show, Select 커맨드만 가능      |
 | `to_tsv`       | SQL 쿼리 결과를 TSV 파일로 저장합니다.                         | Show, Select 커맨드만 가능      |
 | `to_sql`       | 다른 데이터베이스에 SQL 쿼리 결과를 저장합니다.                | Show, Select 커맨드만 가능      |
+| `to_HTML`       | 해당 쿼리를 HTML코드로 변환합니다                | Show, Select 커맨드만 가능      |
 | `URL`          | 데이터베이스 연결 URL을 제공합니다.                            | 읽기용 프로퍼티                 |
 | `engine`       | 데이터베이스 연결을 위한 SQLAlchemy 엔진을 제공합니다.         | 읽기용 프로퍼티                 |
+| `conn`       | 데이터베이스 연결 객체를 제공합니다      | 읽기용 프로퍼티                 |
 
 ### 사용예제
 
@@ -147,8 +149,10 @@ pip install SQLConn
 | `to_excel`     | Save the SQL query results as an Excel file.                        | Show, Select commands only         |
 | `to_tsv`       | Save the SQL query results as a TSV file.                           | Show, Select commands only         |
 | `to_sql`       | Store SQL query results in another database.                        | Show, Select commands only         |
+| `to_HTML`       | Converts the SQL query results to HTML code.	                | Show, Select 커맨드만 가능      |
 | `URL`          | Provide the database connection URL.                                | get property                       |
 | `engine`       | Provides SQLAlchemy engine for database connection.                 | get property                       |
+| `conn`       | Provides the database connection object.	     | get property                  |
 
 ### Example of use
 

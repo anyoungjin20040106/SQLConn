@@ -1,12 +1,12 @@
 from pandas import read_sql
 import warnings
 from sqlalchemy import create_engine
-from sqlalchemy.engine.base import Engine
 from abc import ABC, abstractmethod
 import pymysql
 import pymssql
 import psycopg2
 import sqlite3
+from typing import Union
 
 class SQLConn(ABC):
     def __init__(self):
@@ -63,12 +63,15 @@ class SQLConn(ABC):
                 self.to_DataFrame(cmd).to_sql(name,conn,index=False,if_exists="replace")
         except Exception as e:
             warnings.warn(str(e))
-    def to_HTML(self,cmd:str):
+    def to_HTML(self,cmd:str,escape:bool=True):
         if not (cmd.lower().startswith('select') or cmd.lower().startswith('show')):
             raise ValueError("to_HTML does only supports 'select' or 'show' commands.")
-        self.to_DataFrame(cmd).to_html(index=False)
+        return self.to_DataFrame(cmd).to_html(index=False,escape=escape)
+    @property
+    def conn(self):
+        return self._conn
 class MYSQLConn(SQLConn):
-    def __init__(self,password:str,host:str='127.0.0.1',user:str="root",database:str="mysql",port:str|int=3306) -> None:
+    def __init__(self,password:str,host:str='127.0.0.1',user:str="root",database:str="mysql",port:Union[str,int]=3306) -> None:
         super().__init__()
         self.__host=host
         self.__user=user
@@ -81,7 +84,7 @@ class MYSQLConn(SQLConn):
     def URL(self):
         return f'mysql+pymysql://{self.__user}:{self.__password}@{self.__host}:{self.__port}/{self.__database}'
 class MSSQLConn(SQLConn):
-    def __init__(self,password:str,host:str='127.0.0.1',user:str="sa",database:str="master",port:str|int=1433) -> None:
+    def __init__(self,password:str,host:str='127.0.0.1',user:str="sa",database:str="master",port:Union[str,int]=1433) -> None:
         super().__init__()
         self.__host=host
         self.__user=user
@@ -95,7 +98,7 @@ class MSSQLConn(SQLConn):
         return f'mssql+pyodbc://{self.__user}:{self.__password}@{self.__host}:{self.__port}/{self.__database}'
 
 class PostgresqlConn(SQLConn):
-    def __init__(self,password:str,host:str='127.0.0.1',user:str="postgres",database:str="postgres",port:str|int=5432) -> None:
+    def __init__(self,password:str,host:str='127.0.0.1',user:str="postgres",database:str="postgres",port:Union[str,int]=5432) -> None:
         super().__init__()
         self.__host=host
         self.__user=user

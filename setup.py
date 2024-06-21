@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name='SQLConn',
-    version='0.0.12',
+    version='0.0.15',
     description='This package facilitates easy SQL database integration.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -15,10 +15,15 @@ setup(
         'sqlalchemy',
         'pymysql',
         'pymssql',
-        'psycopg2',
-        'sqlite3'
+        'psycopg2-binary'
     ],
-    packages=find_packages(exclude=[]),
+    packages=find_packages(),
     url='https://github.com/janyoungjin/SQLConn',
-    keywords=['mysql', 'postgresql', 'sqlite', 'mssql', 'sql']
+    keywords=['mysql', 'postgresql', 'sqlite', 'mssql', 'sql'],
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+    ],
+    python_requires='>=3.6',
 )
